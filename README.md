@@ -13,8 +13,11 @@ then run in a terminal:
 
 ### WARNING: this script only works on Unix systems
 
-* this is a python script, you'll need python 2.7 installed to run it
+* this is a python script, you'll need python 2.7 installed to run it : https://www.python.org/download/releases/2.7/
 * you need to have Beautiful Soup installed to get the script working : **pip install BeautifulSoup**
 * install ffmpeg to get direct info about the bitrate of downloaded tracks
+** LINUX: sudo apt-get install ffmpeg
+** MAC OS: brew install ffmpeg
+** more info: https://doc.ubuntu-fr.org/ffmpeg
 * this script will use wget to download tracks
 

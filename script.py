@@ -23,8 +23,9 @@ def get_track():
 
 	for main_index, main_url in enumerate(url_list):
 		print "#####################################"
+		print "\n"
 		print "getting ready to download a new track"
-		print "comment %s" % (comment_list[main_index])
+		print "comment is %s" % (comment_list[main_index])
 
 		#########################################
 		### BUILD THE MONKEY SEARCH REQUEST FROM YOUTUBE URL
@@ -102,11 +103,8 @@ def get_track():
 		current_max_size = 0
 		for dug in dl_url_good:
 			mp3_url = dug[:-1] + '2'
-			#print mp3_url
 			ind = str(commands.getstatusoutput("wget --referer=http://mp3monkey.net --spider %s" % '"' + mp3_url + '"')).find("Length")
-			#print str(commands.getstatusoutput("wget --referer=http://mp3monkey.net --spider %s" % '"' + mp3_url + '"'))
 			size = int(str(commands.getstatusoutput("wget --referer=http://mp3monkey.net --spider %s" % '"' + mp3_url + '"'))[ind:ind + 19].split(":")[-1].split("(")[0].split("[")[0])
-			#print size
 			if size>current_max_size:
 				max_quality_url = mp3_url
 				current_max_size = size
